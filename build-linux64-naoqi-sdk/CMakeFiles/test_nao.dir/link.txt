@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/test_nao.dir/test.cpp.o  -o sdk/bin/test_nao -rdynamic 

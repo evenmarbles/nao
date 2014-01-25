@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="nao" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\.cache\;CMake Files\..\..\..\.cache\qi\;CMake Files\..\..\..\.cache\qi\toolchains\;CMake Files\..\..\..\.cache\qi\toolchains\linux64-naoqi-sdk\;CMake Files\..\..\qibuild-1.14.3\;CMake Files\..\..\qibuild-1.14.3\cmake\;CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\;CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\;CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\swig\;CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\modules\;CMake Files\build-linux64-naoqi-sdk\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_naointerface">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/lib/_naointerface.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 _naointerface" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_naointerface/fast">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/lib/_naointerface.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 _naointerface/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nao">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/bin/nao" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 nao" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nao/fast">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/bin/nao" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 nao/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test">
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_nao">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/bin/test_nao" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 test_nao" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_nao/fast">
+         <Option output="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/sdk/bin/test_nao" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alsoap" />
+            <Add directory="/home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/soap" />
+            <Add directory="/home/astrid/nao/projects/nao" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 test_nao/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/ball.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobject.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobjectmanager.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/balldetector.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/debug/debugballdetector.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/detector.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/main.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/naointerface.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/test.cpp">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/ball.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/enums.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobject.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobjectmanager.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/balldetector.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/debug/debugballdetector.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/vision/detector.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/naointerface.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/naointerface.i">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../../.cache/qi/toolchains/linux64-naoqi-sdk/toolchain-linux64-naoqi-sdk.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\.cache\qi\toolchains\linux64-naoqi-sdk\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/qibuild-config.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/general.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/log.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/set.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/subdirectory.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/find.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/flags.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/tests.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/install.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/target.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/submodule.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/stage.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/option.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/layout.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/install.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/glob.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/autostrap.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/stage.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/uselib.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/internal/list.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\internal\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/swig/python.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\swig\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/../../qibuild-1.14.3/cmake/qibuild/modules/python-config.cmake">
+          <Option virtualFolder="CMake Files\..\..\qibuild-1.14.3\cmake\qibuild\modules\" />
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/dependencies.cmake">
+          <Option virtualFolder="CMake Files\build-linux64-naoqi-sdk\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
