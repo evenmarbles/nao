@@ -4,6 +4,7 @@ project(nao)
 find_package(qibuild)
 
 add_definitions(" -DDEBUG ")
+add_definitions(" -DSIM ")
 add_definitions(" -DWALL ")
 
 include_directories(BEFORE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -15,6 +16,7 @@ set(NAO_SRC_WRAPPED
     core/common/worldobjectmanager.cpp
 )
 set(NAO_SRC
+    core/math/vector2d.cpp
     core/vision/detector.cpp
     core/vision/debug/debugballdetector.cpp
     core/vision/balldetector.cpp
@@ -31,7 +33,10 @@ set(NAO_H_WRAPPED
     core/common/worldobjectmanager.h
 )
 set(NAO_H
+    core/common/imageconstants.h
     core/common/enums.h
+    core/math/mathdefs.h
+    core/math/vector2d.h
     core/vision/detector.h
     core/vision/debug/debugballdetector.h
     core/vision/balldetector.h

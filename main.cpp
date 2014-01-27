@@ -52,6 +52,6 @@ extern "C"
         // Pointer to createModule
         TMainType sig = &_createModule;
         // Call main
-        return ALTools::mainFunction("IALNaoInterface", argc, argv, sig);
+        return ALTools::mainFunction("IAL::NaoInterface", argc, argv, sig);
     }
 #endif

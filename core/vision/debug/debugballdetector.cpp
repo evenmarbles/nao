@@ -97,6 +97,13 @@ void DebugBallDetector::drawCircle(cv::Mat * imageHeader, cv::Point center, int 
     cv::circle(*imageHeader, center, radius, cv::Scalar(0,0,255), 2, 8, 0);
 }
 
+void DebugBallDetector::writeText(cv::Mat * imageHeader, std::string name, float value, int posX, int posY)
+{
+    char buffer [50];
+    sprintf (buffer, "%s= %.2f", name.c_str(), value);
+    cv::putText(*imageHeader, buffer, cvPoint(posX,posY), cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(250,250,250));
+}
+
 bool DebugBallDetector::show(CameraId camId, cv::Mat * imageHeader)
 {
     // Display the image on screen

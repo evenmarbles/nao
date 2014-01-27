@@ -1,5 +1,6 @@
 #include "balldetector.h"
 
+#include "../common/imageconstants.h"
 #include "../common/worldobjectmanager.h"
 
 #include <alerror/alerror.h>
@@ -9,6 +10,8 @@
 
 // OpenCV includes.
 #include <opencv2/imgproc/imgproc.hpp>
+
+#include <cmath>
 
 #include <qi/os.hpp>
 #include <qi/log.hpp>
@@ -33,9 +36,9 @@ BallDetector::~BallDetector()
 #endif
 }
 
-void BallDetector::startDetection()
+void BallDetector::startDetection(bool trackingOn)
 {
-    Detector::startDetection();
+    Detector::startDetection(trackingOn);
 
     try
     {
@@ -71,7 +74,6 @@ void BallDetector::stopDetection()
     }
 }
 
-
 bool BallDetector::findBall(const std::string subscriberId, cv::Scalar minThreshold, cv::Scalar maxThreshold, cv::Mat * imageHeader, Ball_ptr & ball)
 {
     bool ballFound = false;
@@ -104,13 +106,27 @@ bool BallDetector::findBall(const std::string subscriberId, cv::Scalar minThresh
         int radius = cvRound(circles[i][2]);
 //        qiLogInfo("BallDetector") << "center=(" << center.x << "," << center.y << ")" << std::endl;
 
-        ball->setImageCenter(center.x, center.y);
-        ball->setImageRadius(radius);
+        float imageX = static_cast<float>(center.x);
+        float imageY = static_cast<float>(center.y);
         ball->setSeen(true);
+        ball->setImageCenter(imageX, imageY);
+        ball->setImageRadius(radius);
+
+        float yaw = atan((IMAGE_WIDTH / 2.0f - imageX) / (IMAGE_WIDTH / (2.0f * tan(HFOV / 2.0f))));
+        float pitch = atan((IMAGE_HEIGHT / 2.0f - imageY) / (IMAGE_HEIGHT / (2.0f * tan(VFOV / 2.0f))));
+
+        ball->setDistance(pitch);
+        ball->setLoc(ball->getDistance(), yaw);
 
 #ifdef DEBUG
         mDebugger->drawCircle(imageHeader, center, radius);
+        mDebugger->writeText(imageHeader, "distance=", ball->getDistance(), 30, 30);
+        mDebugger->writeText(imageHeader, "loc.x=", ball->getLoc().x, 30, 45);
+        mDebugger->writeText(imageHeader, "loc.y=", ball->getLoc().y, 30, 60);
 #endif
+
+        if (mTrackingOn)
+            trackBall(pitch, yaw);
 
         ballFound = true;
         break;      // TODO: need logic to determine the best fit for ball
@@ -118,6 +134,19 @@ bool BallDetector::findBall(const std::string subscriberId, cv::Scalar minThresh
 
     return ballFound;
 }
+
+void BallDetector::trackBall(float pitch, float yaw)
+{
+    // center ball in image
+    bool isAbsolute = false;
+    AL::ALValue names = AL::ALValue::array("HeadYaw", "HeadPitch");
+    mMotionProxy.stiffnessInterpolation("Head", 0.6f, 1.0f);
+    AL::ALValue angleLists = AL::ALValue::array(yaw, -pitch);
+    AL::ALValue timeLists = AL::ALValue::array(1.0f, 1.0f);
+    mMotionProxy.angleInterpolation(names, angleLists, timeLists, isAbsolute);
+    qi::os::sleep(1.0f);
+}
+
 
 void * BallDetector::processThread(void * arg)
 {
@@ -131,8 +160,8 @@ void * BallDetector::processThread(void * arg)
     long long duration = 1000000000 / self->mFramerate; // in nanoseconds
 
     // cv::Mat header to wrap an OpenCV image.
-    cv::Mat imageHeaderTop = cv::Mat(cv::Size(320, 240), CV_8UC3);
-    cv::Mat imageHeaderBottom = cv::Mat(cv::Size(320, 240), CV_8UC3);
+    cv::Mat imageHeaderTop = cv::Mat(cv::Size(IMAGE_WIDTH, IMAGE_HEIGHT), CV_8UC3);
+    cv::Mat imageHeaderBottom = cv::Mat(cv::Size(IMAGE_WIDTH, IMAGE_HEIGHT), CV_8UC3);
 
     // Determined by calibration
     int min1 = 2, min2 = 15, min3 = 9;

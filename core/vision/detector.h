@@ -3,6 +3,7 @@
 
 #include <alproxies/alvideodeviceproxy.h>
 #include <alproxies/almemoryproxy.h>
+#include <alproxies/almotionproxy.h>
 #include <althread/almutex.h>
 
 #include <qi/os.hpp>
@@ -16,14 +17,16 @@ namespace IAL
     {
     public:
         Detector(boost::shared_ptr<AL::ALBroker> broker);
-
         virtual ~Detector();
 
         // Start detection
-        virtual void startDetection();
+        virtual void startDetection(bool trackingOn = false);
 
         // Stop detection
         virtual void stopDetection();
+
+        void startTracking()    { mTrackingOn = true; }
+        void stopTracking()     { mTrackingOn = false; }
 
     protected:
         void getImage(const std::string subscriberId, cv::Mat * imageHeader);
@@ -31,11 +34,17 @@ namespace IAL
         // Flag for detection
         bool mIsDetecting;
 
+        // Flag for tracking object
+        bool mTrackingOn;
+
         // Memory proxy for event subscription and data access.
         AL::ALMemoryProxy mMemoryProxy;
 
         // Proxy to video device.
         AL::ALVideoDeviceProxy mALVideoDevice;
+
+        // Motion proxy for image tracking.
+        AL::ALMotionProxy mMotionProxy;
 
         // Video subscriber id.
         std::string mTSubscriberId;

@@ -10,8 +10,10 @@ using namespace IAL;
 
 Detector::Detector(boost::shared_ptr<AL::ALBroker> broker):
     mIsDetecting(false),
+    mTrackingOn(false),
     mMemoryProxy(broker),
     mALVideoDevice(broker),
+    mMotionProxy(broker),
     mTSubscriberId(),
     mBSubscriberId(),
     mFramerate(30),
@@ -26,14 +28,17 @@ Detector::~Detector()
 }
 
 
-void Detector::startDetection()
+void Detector::startDetection(bool trackingOn)
 {
     if (mIsDetecting)
         throw std::runtime_error("Detection already started");
+
+    mTrackingOn = trackingOn;
 }
 
 void Detector::stopDetection()
 {
+    mTrackingOn = false;
     mIsDetecting = false;
 }
 

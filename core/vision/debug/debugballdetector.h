@@ -28,6 +28,7 @@ namespace IAL
         void calibrate(cv::Mat * imgHSV);
 
         void drawCircle(cv::Mat * imageHeader, cv::Point center, int radius);
+        void writeText(cv::Mat * imageHeader, std::string name, float value, int posX, int posY);
 
         bool show(CameraId camId, cv::Mat * imageHeader);
 

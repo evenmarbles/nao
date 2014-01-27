@@ -26,6 +26,14 @@ namespace IAL
 
         virtual void init();
 
+        // Starts/stops ball detection
+        void startBallDetection(const bool & trackingOn = false);
+        void stopBallDetection();
+
+        // Starts/stops ball tracking
+        void startBallTracking();
+        void stopBallTracking();
+
     private:
         BallDetector * mBallDetector;
     };
