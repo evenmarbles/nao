@@ -216,6 +216,8 @@
       </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobjectmanager.cpp">
       </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/math/vector2d.cpp">
+      </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/vision/balldetector.cpp">
       </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/vision/debug/debugballdetector.cpp">
@@ -232,9 +234,15 @@
       </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/common/enums.h">
       </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/common/imageconstants.h">
+      </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobject.h">
       </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/common/worldobjectmanager.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/math/mathdefs.h">
+      </Unit>
+      <Unit filename="/home/astrid/nao/projects/nao/core/math/vector2d.h">
       </Unit>
       <Unit filename="/home/astrid/nao/projects/nao/core/vision/balldetector.h">
       </Unit>

@@ -236,9 +236,12 @@ CMakeFiles/_naointerface.dir/core/common/ball.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/mathdefs.h
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/ball.cpp
  /home/astrid/nao/projects/nao/core/common/ball.h
  /home/astrid/nao/projects/nao/core/common/enums.h
+ /home/astrid/nao/projects/nao/core/common/imageconstants.h
  /home/astrid/nao/projects/nao/core/common/worldobject.h
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/boost/assert.hpp
@@ -475,6 +478,7 @@ CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/enums.h
  /home/astrid/nao/projects/nao/core/common/worldobject.cpp
  /home/astrid/nao/projects/nao/core/common/worldobject.h
@@ -713,12 +717,14 @@ CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/ball.h
  /home/astrid/nao/projects/nao/core/common/enums.h
  /home/astrid/nao/projects/nao/core/common/worldobject.h
  /home/astrid/nao/projects/nao/core/common/worldobjectmanager.cpp
  /home/astrid/nao/projects/nao/core/common/worldobjectmanager.h
 CMakeFiles/_naointerface.dir/naointerfacePYTHON_wrap.cxx.o
+ ../core/common/../math/vector2d.h
  ../core/common/ball.h
  ../core/common/enums.h
  ../core/common/worldobject.h

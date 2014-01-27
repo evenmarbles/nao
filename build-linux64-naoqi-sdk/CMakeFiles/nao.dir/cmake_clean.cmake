@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "naointerfacePYTHON_wrap.cxx"
   "sdk/lib/naointerface.py"
+  "CMakeFiles/nao.dir/core/math/vector2d.cpp.o"
   "CMakeFiles/nao.dir/core/vision/detector.cpp.o"
   "CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o"
   "CMakeFiles/nao.dir/core/vision/balldetector.cpp.o"

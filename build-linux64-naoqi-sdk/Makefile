@@ -269,6 +269,30 @@ core/common/worldobjectmanager.cpp.s:
 	$(MAKE) -f CMakeFiles/nao.dir/build.make CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.s
 .PHONY : core/common/worldobjectmanager.cpp.s
 
+core/math/vector2d.o: core/math/vector2d.cpp.o
+.PHONY : core/math/vector2d.o
+
+# target to build an object file
+core/math/vector2d.cpp.o:
+	$(MAKE) -f CMakeFiles/nao.dir/build.make CMakeFiles/nao.dir/core/math/vector2d.cpp.o
+.PHONY : core/math/vector2d.cpp.o
+
+core/math/vector2d.i: core/math/vector2d.cpp.i
+.PHONY : core/math/vector2d.i
+
+# target to preprocess a source file
+core/math/vector2d.cpp.i:
+	$(MAKE) -f CMakeFiles/nao.dir/build.make CMakeFiles/nao.dir/core/math/vector2d.cpp.i
+.PHONY : core/math/vector2d.cpp.i
+
+core/math/vector2d.s: core/math/vector2d.cpp.s
+.PHONY : core/math/vector2d.s
+
+# target to generate assembly for a file
+core/math/vector2d.cpp.s:
+	$(MAKE) -f CMakeFiles/nao.dir/build.make CMakeFiles/nao.dir/core/math/vector2d.cpp.s
+.PHONY : core/math/vector2d.cpp.s
+
 core/vision/balldetector.o: core/vision/balldetector.cpp.o
 .PHONY : core/vision/balldetector.o
 
@@ -462,6 +486,9 @@ help:
 	@echo "... core/common/worldobjectmanager.o"
 	@echo "... core/common/worldobjectmanager.i"
 	@echo "... core/common/worldobjectmanager.s"
+	@echo "... core/math/vector2d.o"
+	@echo "... core/math/vector2d.i"
+	@echo "... core/math/vector2d.s"
 	@echo "... core/vision/balldetector.o"
 	@echo "... core/vision/balldetector.i"
 	@echo "... core/vision/balldetector.s"

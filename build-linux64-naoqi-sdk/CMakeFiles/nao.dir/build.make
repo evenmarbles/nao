@@ -49,9 +49,32 @@ include CMakeFiles/nao.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/nao.dir/flags.make
 
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o: CMakeFiles/nao.dir/flags.make
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o: ../core/math/vector2d.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/math/vector2d.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/math/vector2d.cpp.o -c /home/astrid/nao/projects/nao/core/math/vector2d.cpp
+
+CMakeFiles/nao.dir/core/math/vector2d.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nao.dir/core/math/vector2d.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/astrid/nao/projects/nao/core/math/vector2d.cpp > CMakeFiles/nao.dir/core/math/vector2d.cpp.i
+
+CMakeFiles/nao.dir/core/math/vector2d.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nao.dir/core/math/vector2d.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/astrid/nao/projects/nao/core/math/vector2d.cpp -o CMakeFiles/nao.dir/core/math/vector2d.cpp.s
+
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o.requires:
+.PHONY : CMakeFiles/nao.dir/core/math/vector2d.cpp.o.requires
+
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o.provides: CMakeFiles/nao.dir/core/math/vector2d.cpp.o.requires
+	$(MAKE) -f CMakeFiles/nao.dir/build.make CMakeFiles/nao.dir/core/math/vector2d.cpp.o.provides.build
+.PHONY : CMakeFiles/nao.dir/core/math/vector2d.cpp.o.provides
+
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o.provides.build: CMakeFiles/nao.dir/core/math/vector2d.cpp.o
+
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: ../core/vision/detector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/vision/detector.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/vision/detector.cpp.o -c /home/astrid/nao/projects/nao/core/vision/detector.cpp
 
@@ -74,7 +97,7 @@ CMakeFiles/nao.dir/core/vision/detector.cpp.o.provides.build: CMakeFiles/nao.dir
 
 CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o: ../core/vision/debug/debugballdetector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o -c /home/astrid/nao/projects/nao/core/vision/debug/debugballdetector.cpp
 
@@ -97,7 +120,7 @@ CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o.provides.build: CMa
 
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/balldetector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/vision/balldetector.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/vision/balldetector.cpp.o -c /home/astrid/nao/projects/nao/core/vision/balldetector.cpp
 
@@ -120,7 +143,7 @@ CMakeFiles/nao.dir/core/vision/balldetector.cpp.o.provides.build: CMakeFiles/nao
 
 CMakeFiles/nao.dir/naointerface.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/naointerface.cpp.o: ../naointerface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/naointerface.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/naointerface.cpp.o -c /home/astrid/nao/projects/nao/naointerface.cpp
 
@@ -143,7 +166,7 @@ CMakeFiles/nao.dir/naointerface.cpp.o.provides.build: CMakeFiles/nao.dir/naointe
 
 CMakeFiles/nao.dir/main.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/main.cpp.o -c /home/astrid/nao/projects/nao/main.cpp
 
@@ -166,7 +189,7 @@ CMakeFiles/nao.dir/main.cpp.o.provides.build: CMakeFiles/nao.dir/main.cpp.o
 
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: ../core/common/worldobject.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/common/worldobject.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/common/worldobject.cpp.o -c /home/astrid/nao/projects/nao/core/common/worldobject.cpp
 
@@ -189,7 +212,7 @@ CMakeFiles/nao.dir/core/common/worldobject.cpp.o.provides.build: CMakeFiles/nao.
 
 CMakeFiles/nao.dir/core/common/ball.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/ball.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/common/ball.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/common/ball.cpp.o -c /home/astrid/nao/projects/nao/core/common/ball.cpp
 
@@ -212,7 +235,7 @@ CMakeFiles/nao.dir/core/common/ball.cpp.o.provides.build: CMakeFiles/nao.dir/cor
 
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: CMakeFiles/nao.dir/flags.make
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobjectmanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/astrid/nao/projects/nao/build-linux64-naoqi-sdk/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o -c /home/astrid/nao/projects/nao/core/common/worldobjectmanager.cpp
 
@@ -235,6 +258,7 @@ CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o.provides.build: CMakeFil
 
 # Object files for target nao
 nao_OBJECTS = \
+"CMakeFiles/nao.dir/core/math/vector2d.cpp.o" \
 "CMakeFiles/nao.dir/core/vision/detector.cpp.o" \
 "CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o" \
 "CMakeFiles/nao.dir/core/vision/balldetector.cpp.o" \
@@ -247,6 +271,7 @@ nao_OBJECTS = \
 # External object files for target nao
 nao_EXTERNAL_OBJECTS =
 
+sdk/bin/nao: CMakeFiles/nao.dir/core/math/vector2d.cpp.o
 sdk/bin/nao: CMakeFiles/nao.dir/core/vision/detector.cpp.o
 sdk/bin/nao: CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o
 sdk/bin/nao: CMakeFiles/nao.dir/core/vision/balldetector.cpp.o
@@ -286,6 +311,7 @@ sdk/bin/nao: CMakeFiles/nao.dir/link.txt
 CMakeFiles/nao.dir/build: sdk/bin/nao
 .PHONY : CMakeFiles/nao.dir/build
 
+CMakeFiles/nao.dir/requires: CMakeFiles/nao.dir/core/math/vector2d.cpp.o.requires
 CMakeFiles/nao.dir/requires: CMakeFiles/nao.dir/core/vision/detector.cpp.o.requires
 CMakeFiles/nao.dir/requires: CMakeFiles/nao.dir/core/vision/debug/debugballdetector.cpp.o.requires
 CMakeFiles/nao.dir/requires: CMakeFiles/nao.dir/core/vision/balldetector.cpp.o.requires

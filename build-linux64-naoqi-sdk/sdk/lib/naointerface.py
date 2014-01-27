@@ -81,19 +81,16 @@ class WorldObject(_object):
     __swig_destroy__ = _naointerface.delete_WorldObject
     __del__ = lambda self : None;
     def getType(self): return _naointerface.WorldObject_getType(self)
-    def setImageCenter(self, *args): return _naointerface.WorldObject_setImageCenter(self, *args)
-    def setImageRadius(self, *args): return _naointerface.WorldObject_setImageRadius(self, *args)
+    def reset(self): return _naointerface.WorldObject_reset(self)
+    def copy(self, *args): return _naointerface.WorldObject_copy(self, *args)
+    def setLoc(self, *args): return _naointerface.WorldObject_setLoc(self, *args)
     def setCameraId(self, *args): return _naointerface.WorldObject_setCameraId(self, *args)
     def setSeen(self, *args): return _naointerface.WorldObject_setSeen(self, *args)
     def setTimestamp(self, *args): return _naointerface.WorldObject_setTimestamp(self, *args)
-    def getImageCenterX(self): return _naointerface.WorldObject_getImageCenterX(self)
-    def getImageCenterY(self): return _naointerface.WorldObject_getImageCenterY(self)
-    def getImageRadius(self): return _naointerface.WorldObject_getImageRadius(self)
+    def getLoc(self): return _naointerface.WorldObject_getLoc(self)
     def getCameraId(self): return _naointerface.WorldObject_getCameraId(self)
     def isSeen(self): return _naointerface.WorldObject_isSeen(self)
     def getTimeStamp(self): return _naointerface.WorldObject_getTimeStamp(self)
-    def reset(self): return _naointerface.WorldObject_reset(self)
-    def copy(self, *args): return _naointerface.WorldObject_copy(self, *args)
 WorldObject_swigregister = _naointerface.WorldObject_swigregister
 WorldObject_swigregister(WorldObject)
 
@@ -112,7 +109,11 @@ class Ball(WorldObject):
     __swig_destroy__ = _naointerface.delete_Ball
     __del__ = lambda self : None;
     def getType(self): return _naointerface.Ball_getType(self)
-    def testPython(self): return _naointerface.Ball_testPython(self)
+    def copy(self, *args): return _naointerface.Ball_copy(self, *args)
+    def setDistance(self, *args): return _naointerface.Ball_setDistance(self, *args)
+    def setImageRadius(self, *args): return _naointerface.Ball_setImageRadius(self, *args)
+    def setImageCenter(self, *args): return _naointerface.Ball_setImageCenter(self, *args)
+    def getDistance(self): return _naointerface.Ball_getDistance(self)
 Ball_swigregister = _naointerface.Ball_swigregister
 Ball_swigregister(Ball)
 

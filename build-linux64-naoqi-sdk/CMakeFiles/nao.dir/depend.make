@@ -235,9 +235,12 @@ CMakeFiles/nao.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-lin
 CMakeFiles/nao.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/nao.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/../math/mathdefs.h
+CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/ball.cpp
 CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/ball.h
 CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/enums.h
+CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/imageconstants.h
 CMakeFiles/nao.dir/core/common/ball.cpp.o: ../core/common/worldobject.h
 
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/boost/assert.hpp
@@ -474,6 +477,7 @@ CMakeFiles/nao.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.1
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/core/common/worldobject.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: ../core/common/enums.h
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: ../core/common/worldobject.cpp
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o: ../core/common/worldobject.h
@@ -712,16 +716,22 @@ CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/ball.h
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/enums.h
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobject.h
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobjectmanager.cpp
 CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobjectmanager.h
 
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o: ../core/math/vector2d.cpp
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o: ../core/math/vector2d.h
+
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/alerror.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -967,8 +977,11 @@ CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/log.hpp
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/../math/mathdefs.h
+CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/../math/vector2d.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/ball.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/enums.h
+CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/imageconstants.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/worldobject.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/../common/worldobjectmanager.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o: ../core/vision/balldetector.cpp
@@ -1015,6 +1028,8 @@ CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
 CMakeFiles/nao.dir/core/vision/detector.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -1280,6 +1295,8 @@ CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -1959,6 +1976,7 @@ CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/main.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/main.cpp.o: ../core/vision/../common/../math/vector2d.h
 CMakeFiles/nao.dir/main.cpp.o: ../core/vision/../common/ball.h
 CMakeFiles/nao.dir/main.cpp.o: ../core/vision/../common/enums.h
 CMakeFiles/nao.dir/main.cpp.o: ../core/vision/../common/worldobject.h
@@ -1987,6 +2005,8 @@ CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -2666,6 +2686,7 @@ CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/nao.dir/naointerface.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/nao.dir/naointerface.cpp.o: ../core/vision/../common/../math/vector2d.h
 CMakeFiles/nao.dir/naointerface.cpp.o: ../core/vision/../common/ball.h
 CMakeFiles/nao.dir/naointerface.cpp.o: ../core/vision/../common/enums.h
 CMakeFiles/nao.dir/naointerface.cpp.o: ../core/vision/../common/worldobject.h

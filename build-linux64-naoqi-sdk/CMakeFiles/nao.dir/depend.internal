@@ -236,9 +236,12 @@ CMakeFiles/nao.dir/core/common/ball.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/mathdefs.h
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/ball.cpp
  /home/astrid/nao/projects/nao/core/common/ball.h
  /home/astrid/nao/projects/nao/core/common/enums.h
+ /home/astrid/nao/projects/nao/core/common/imageconstants.h
  /home/astrid/nao/projects/nao/core/common/worldobject.h
 CMakeFiles/nao.dir/core/common/worldobject.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/boost/assert.hpp
@@ -475,6 +478,7 @@ CMakeFiles/nao.dir/core/common/worldobject.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/enums.h
  /home/astrid/nao/projects/nao/core/common/worldobject.cpp
  /home/astrid/nao/projects/nao/core/common/worldobject.h
@@ -713,16 +717,22 @@ CMakeFiles/nao.dir/core/common/worldobjectmanager.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/common/ball.h
  /home/astrid/nao/projects/nao/core/common/enums.h
  /home/astrid/nao/projects/nao/core/common/worldobject.h
  /home/astrid/nao/projects/nao/core/common/worldobjectmanager.cpp
  /home/astrid/nao/projects/nao/core/common/worldobjectmanager.h
+CMakeFiles/nao.dir/core/math/vector2d.cpp.o
+ /home/astrid/nao/projects/nao/core/math/vector2d.cpp
+ /home/astrid/nao/projects/nao/core/math/vector2d.h
 CMakeFiles/nao.dir/core/vision/balldetector.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/alerror.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -968,8 +978,11 @@ CMakeFiles/nao.dir/core/vision/balldetector.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/log.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/vision/../common/../math/mathdefs.h
+ /home/astrid/nao/projects/nao/core/vision/../common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/vision/../common/ball.h
  /home/astrid/nao/projects/nao/core/vision/../common/enums.h
+ /home/astrid/nao/projects/nao/core/vision/../common/imageconstants.h
  /home/astrid/nao/projects/nao/core/vision/../common/worldobject.h
  /home/astrid/nao/projects/nao/core/vision/../common/worldobjectmanager.h
  /home/astrid/nao/projects/nao/core/vision/balldetector.cpp
@@ -1016,6 +1029,8 @@ CMakeFiles/nao.dir/core/vision/detector.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -1281,6 +1296,8 @@ CMakeFiles/nao.dir/main.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -1960,6 +1977,7 @@ CMakeFiles/nao.dir/main.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/vision/../common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/vision/../common/ball.h
  /home/astrid/nao/projects/nao/core/vision/../common/enums.h
  /home/astrid/nao/projects/nao/core/vision/../common/worldobject.h
@@ -1988,6 +2006,8 @@ CMakeFiles/nao.dir/naointerface.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alerror/config.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almemoryproxyposthandler.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxy.h
+ /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/almotionproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxy.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/alvideodeviceproxyposthandler.h
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/alproxies/api.h
@@ -2667,6 +2687,7 @@ CMakeFiles/nao.dir/naointerface.cpp.o
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
  /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+ /home/astrid/nao/projects/nao/core/vision/../common/../math/vector2d.h
  /home/astrid/nao/projects/nao/core/vision/../common/ball.h
  /home/astrid/nao/projects/nao/core/vision/../common/enums.h
  /home/astrid/nao/projects/nao/core/vision/../common/worldobject.h

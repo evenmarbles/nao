@@ -2943,13 +2943,14 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_IAL__Ball swig_types[1]
 #define SWIGTYPE_p_IAL__WorldObject swig_types[2]
 #define SWIGTYPE_p_IAL__WorldObjectManager swig_types[3]
-#define SWIGTYPE_p_WorldObjectType swig_types[4]
-#define SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t swig_types[5]
-#define SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t swig_types[6]
-#define SWIGTYPE_p_char swig_types[7]
-#define SWIGTYPE_p_qi__os__timeval swig_types[8]
-static swig_type_info *swig_types[10];
-static swig_module_info swig_module = {swig_types, 9, 0, 0, 0, 0};
+#define SWIGTYPE_p_Vector2D swig_types[4]
+#define SWIGTYPE_p_WorldObjectType swig_types[5]
+#define SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t swig_types[6]
+#define SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_qi__os__timeval swig_types[9]
+static swig_type_info *swig_types[11];
+static swig_module_info swig_module = {swig_types, 10, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3075,14 +3076,7 @@ struct SWIG_null_deleter {
 #define SWIG_NO_NULL_DELETER_SWIG_BUILTIN_INIT
 
 
-#include <limits.h>
-#if !defined(SWIG_NO_LLONG_MAX)
-# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
-#   define LLONG_MAX __LONG_LONG_MAX__
-#   define LLONG_MIN (-LLONG_MAX - 1LL)
-#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
-# endif
-#endif
+#include <float.h>
 
 
 SWIGINTERN int
@@ -3129,7 +3123,20 @@ SWIG_AsVal_double (PyObject *obj, double *val)
 }
 
 
-#include <float.h>
+SWIGINTERN int
+SWIG_AsVal_float (PyObject * obj, float *val)
+{
+  double v;
+  int res = SWIG_AsVal_double (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < -FLT_MAX || v > FLT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< float >(v);
+    }
+  }  
+  return res;
+}
 
 
 #include <math.h>
@@ -3205,6 +3212,34 @@ SWIG_AsVal_long (PyObject *obj, long* val)
 
 
 SWIGINTERN int
+SWIG_AsVal_bool (PyObject *obj, bool *val)
+{
+  int r = PyObject_IsTrue(obj);
+  if (r == -1)
+    return SWIG_ERROR;
+  if (val) *val = r ? true : false;
+  return SWIG_OK;
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_bool  (bool value)
+{
+  return PyBool_FromLong(value ? 1 : 0);
+}
+
+
+#include <limits.h>
+#if !defined(SWIG_NO_LLONG_MAX)
+# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
+#   define LLONG_MAX __LONG_LONG_MAX__
+#   define LLONG_MIN (-LLONG_MAX - 1LL)
+#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
+# endif
+#endif
+
+
+SWIGINTERN int
 SWIG_AsVal_int (PyObject * obj, int *val)
 {
   long v;
@@ -3220,21 +3255,13 @@ SWIG_AsVal_int (PyObject * obj, int *val)
 }
 
 
-SWIGINTERN int
-SWIG_AsVal_bool (PyObject *obj, bool *val)
-{
-  int r = PyObject_IsTrue(obj);
-  if (r == -1)
-    return SWIG_ERROR;
-  if (val) *val = r ? true : false;
-  return SWIG_OK;
-}
+  #define SWIG_From_double   PyFloat_FromDouble 
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_bool  (bool value)
-{
-  return PyBool_FromLong(value ? 1 : 0);
+SWIGINTERNINLINE PyObject *
+SWIG_From_float  (float value)
+{    
+  return SWIG_From_double  (value);
 }
 
 
@@ -3332,29 +3359,21 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_WorldObject_setImageCenter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_WorldObject_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  int arg2 ;
-  int arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< IAL::WorldObject > tempshared1 ;
   boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:WorldObject_setImageCenter",&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_reset",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_setImageCenter" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_reset" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
@@ -3365,17 +3384,7 @@ SWIGINTERN PyObject *_wrap_WorldObject_setImageCenter(PyObject *SWIGUNUSEDPARM(s
       arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "WorldObject_setImageCenter" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "WorldObject_setImageCenter" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  (arg1)->setImageCenter(arg2,arg3);
+  (arg1)->reset();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3383,25 +3392,25 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_WorldObject_setImageRadius(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_WorldObject_copy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  int arg2 ;
+  IAL::WorldObject_ptr arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< IAL::WorldObject > tempshared1 ;
   boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:WorldObject_setImageRadius",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:WorldObject_copy",&obj0,&obj1)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_setImageRadius" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_copy" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
@@ -3412,12 +3421,67 @@ SWIGINTERN PyObject *_wrap_WorldObject_setImageRadius(PyObject *SWIGUNUSEDPARM(s
       arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  {
+    int newmem = 0;
+    res2 = SWIG_ConvertPtrAndOwn(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t,  0 , &newmem);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "WorldObject_copy" "', argument " "2"" of type '" "IAL::WorldObject_ptr""'"); 
+    }
+    if (argp2) arg2 = *(reinterpret_cast< IAL::WorldObject_ptr * >(argp2));
+    if (newmem & SWIG_CAST_NEW_MEMORY) delete reinterpret_cast< IAL::WorldObject_ptr * >(argp2);
+  }
+  (arg1)->copy(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_WorldObject_setLoc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< IAL::WorldObject > tempshared1 ;
+  boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:WorldObject_setLoc",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_setLoc" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
+      arg1 = const_cast< IAL::WorldObject * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
+      arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "WorldObject_setImageRadius" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "WorldObject_setLoc" "', argument " "2"" of type '" "float""'");
   } 
-  arg2 = static_cast< int >(val2);
-  (arg1)->setImageRadius(arg2);
+  arg2 = static_cast< float >(val2);
+  ecode3 = SWIG_AsVal_float(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "WorldObject_setLoc" "', argument " "3"" of type '" "float""'");
+  } 
+  arg3 = static_cast< float >(val3);
+  (arg1)->setLoc(arg2,arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3567,7 +3631,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_WorldObject_getImageCenterX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_WorldObject_getLoc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
   void *argp1 = 0 ;
@@ -3575,14 +3639,14 @@ SWIGINTERN PyObject *_wrap_WorldObject_getImageCenterX(PyObject *SWIGUNUSEDPARM(
   boost::shared_ptr< IAL::WorldObject > tempshared1 ;
   boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
-  int result;
+  Vector2D result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_getImageCenterX",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_getLoc",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_getImageCenterX" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_getLoc" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
@@ -3593,76 +3657,8 @@ SWIGINTERN PyObject *_wrap_WorldObject_getImageCenterX(PyObject *SWIGUNUSEDPARM(
       arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  result = (int)(arg1)->getImageCenterX();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_WorldObject_getImageCenterY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< IAL::WorldObject > tempshared1 ;
-  boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_getImageCenterY",&obj0)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_getImageCenterY" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  result = (int)(arg1)->getImageCenterY();
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_WorldObject_getImageRadius(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< IAL::WorldObject > tempshared1 ;
-  boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_getImageRadius",&obj0)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_getImageRadius" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  result = (int)(arg1)->getImageRadius();
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  result = (arg1)->getLoc();
+  resultobj = SWIG_NewPointerObj((new Vector2D(static_cast< const Vector2D& >(result))), SWIGTYPE_p_Vector2D, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -3771,85 +3767,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_WorldObject_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< IAL::WorldObject > tempshared1 ;
-  boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:WorldObject_reset",&obj0)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_reset" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  (arg1)->reset();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_WorldObject_copy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  IAL::WorldObject *arg1 = (IAL::WorldObject *) 0 ;
-  IAL::WorldObject_ptr arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< IAL::WorldObject > tempshared1 ;
-  boost::shared_ptr< IAL::WorldObject > *smartarg1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:WorldObject_copy",&obj0,&obj1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "WorldObject_copy" "', argument " "1"" of type '" "IAL::WorldObject *""'"); 
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::WorldObject > * >(argp1);
-      arg1 = const_cast< IAL::WorldObject * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    int newmem = 0;
-    res2 = SWIG_ConvertPtrAndOwn(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_IAL__WorldObject_t,  0 , &newmem);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "WorldObject_copy" "', argument " "2"" of type '" "IAL::WorldObject_ptr""'"); 
-    }
-    if (argp2) arg2 = *(reinterpret_cast< IAL::WorldObject_ptr * >(argp2));
-    if (newmem & SWIG_CAST_NEW_MEMORY) delete reinterpret_cast< IAL::WorldObject_ptr * >(argp2);
-  }
-  (arg1)->copy(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *WorldObject_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -3940,22 +3857,25 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Ball_testPython(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Ball_copy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IAL::Ball *arg1 = (IAL::Ball *) 0 ;
+  IAL::Ball_ptr arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< IAL::Ball > tempshared1 ;
   boost::shared_ptr< IAL::Ball > *smartarg1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  int result;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Ball_testPython",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:Ball_copy",&obj0,&obj1)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_testPython" "', argument " "1"" of type '" "IAL::Ball *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_copy" "', argument " "1"" of type '" "IAL::Ball *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
@@ -3966,8 +3886,186 @@ SWIGINTERN PyObject *_wrap_Ball_testPython(PyObject *SWIGUNUSEDPARM(self), PyObj
       arg1 = const_cast< IAL::Ball * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  result = (int)(arg1)->testPython();
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  {
+    int newmem = 0;
+    res2 = SWIG_ConvertPtrAndOwn(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t,  0 , &newmem);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Ball_copy" "', argument " "2"" of type '" "IAL::Ball_ptr""'"); 
+    }
+    if (argp2) arg2 = *(reinterpret_cast< IAL::Ball_ptr * >(argp2));
+    if (newmem & SWIG_CAST_NEW_MEMORY) delete reinterpret_cast< IAL::Ball_ptr * >(argp2);
+  }
+  (arg1)->copy(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Ball_setDistance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IAL::Ball *arg1 = (IAL::Ball *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< IAL::Ball > tempshared1 ;
+  boost::shared_ptr< IAL::Ball > *smartarg1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Ball_setDistance",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_setDistance" "', argument " "1"" of type '" "IAL::Ball *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Ball_setDistance" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  (arg1)->setDistance(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Ball_setImageRadius(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IAL::Ball *arg1 = (IAL::Ball *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< IAL::Ball > tempshared1 ;
+  boost::shared_ptr< IAL::Ball > *smartarg1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Ball_setImageRadius",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_setImageRadius" "', argument " "1"" of type '" "IAL::Ball *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Ball_setImageRadius" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setImageRadius(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Ball_setImageCenter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IAL::Ball *arg1 = (IAL::Ball *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< IAL::Ball > tempshared1 ;
+  boost::shared_ptr< IAL::Ball > *smartarg1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Ball_setImageCenter",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_setImageCenter" "', argument " "1"" of type '" "IAL::Ball *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Ball_setImageCenter" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  ecode3 = SWIG_AsVal_float(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Ball_setImageCenter" "', argument " "3"" of type '" "float""'");
+  } 
+  arg3 = static_cast< float >(val3);
+  (arg1)->setImageCenter(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Ball_getDistance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IAL::Ball *arg1 = (IAL::Ball *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< IAL::Ball > tempshared1 ;
+  boost::shared_ptr< IAL::Ball > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Ball_getDistance",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_IAL__Ball_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Ball_getDistance" "', argument " "1"" of type '" "IAL::Ball *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  IAL::Ball > * >(argp1);
+      arg1 = const_cast< IAL::Ball * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (float)(arg1)->getDistance();
+  resultobj = SWIG_From_float(static_cast< float >(result));
   return resultobj;
 fail:
   return NULL;
@@ -4097,24 +4195,25 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_WorldObject", _wrap_new_WorldObject, METH_VARARGS, NULL},
 	 { (char *)"delete_WorldObject", _wrap_delete_WorldObject, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_getType", _wrap_WorldObject_getType, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_setImageCenter", _wrap_WorldObject_setImageCenter, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_setImageRadius", _wrap_WorldObject_setImageRadius, METH_VARARGS, NULL},
+	 { (char *)"WorldObject_reset", _wrap_WorldObject_reset, METH_VARARGS, NULL},
+	 { (char *)"WorldObject_copy", _wrap_WorldObject_copy, METH_VARARGS, NULL},
+	 { (char *)"WorldObject_setLoc", _wrap_WorldObject_setLoc, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_setCameraId", _wrap_WorldObject_setCameraId, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_setSeen", _wrap_WorldObject_setSeen, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_setTimestamp", _wrap_WorldObject_setTimestamp, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_getImageCenterX", _wrap_WorldObject_getImageCenterX, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_getImageCenterY", _wrap_WorldObject_getImageCenterY, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_getImageRadius", _wrap_WorldObject_getImageRadius, METH_VARARGS, NULL},
+	 { (char *)"WorldObject_getLoc", _wrap_WorldObject_getLoc, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_getCameraId", _wrap_WorldObject_getCameraId, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_isSeen", _wrap_WorldObject_isSeen, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_getTimeStamp", _wrap_WorldObject_getTimeStamp, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_reset", _wrap_WorldObject_reset, METH_VARARGS, NULL},
-	 { (char *)"WorldObject_copy", _wrap_WorldObject_copy, METH_VARARGS, NULL},
 	 { (char *)"WorldObject_swigregister", WorldObject_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Ball", _wrap_new_Ball, METH_VARARGS, NULL},
 	 { (char *)"delete_Ball", _wrap_delete_Ball, METH_VARARGS, NULL},
 	 { (char *)"Ball_getType", _wrap_Ball_getType, METH_VARARGS, NULL},
-	 { (char *)"Ball_testPython", _wrap_Ball_testPython, METH_VARARGS, NULL},
+	 { (char *)"Ball_copy", _wrap_Ball_copy, METH_VARARGS, NULL},
+	 { (char *)"Ball_setDistance", _wrap_Ball_setDistance, METH_VARARGS, NULL},
+	 { (char *)"Ball_setImageRadius", _wrap_Ball_setImageRadius, METH_VARARGS, NULL},
+	 { (char *)"Ball_setImageCenter", _wrap_Ball_setImageCenter, METH_VARARGS, NULL},
+	 { (char *)"Ball_getDistance", _wrap_Ball_getDistance, METH_VARARGS, NULL},
 	 { (char *)"Ball_swigregister", Ball_swigregister, METH_VARARGS, NULL},
 	 { (char *)"delete_WorldObjectManager", _wrap_delete_WorldObjectManager, METH_VARARGS, NULL},
 	 { (char *)"WorldObjectManager_getWorldObject", _wrap_WorldObjectManager_getWorldObject, METH_VARARGS, NULL},
@@ -4139,6 +4238,7 @@ static swig_type_info _swigt__p_CameraId = {"_p_CameraId", "CameraId *", 0, 0, (
 static swig_type_info _swigt__p_IAL__Ball = {"_p_IAL__Ball", "IAL::Ball *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_IAL__WorldObject = {"_p_IAL__WorldObject", "IAL::WorldObject *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_IAL__WorldObjectManager = {"_p_IAL__WorldObjectManager", "IAL::WorldObjectManager *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Vector2D = {"_p_Vector2D", "Vector2D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_WorldObjectType = {"_p_WorldObjectType", "WorldObjectType *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_IAL__Ball_t = {"_p_boost__shared_ptrT_IAL__Ball_t", "IAL::Ball_ptr *|boost::shared_ptr< IAL::Ball > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_IAL__WorldObject_t = {"_p_boost__shared_ptrT_IAL__WorldObject_t", "IAL::WorldObject_ptr *|boost::shared_ptr< IAL::WorldObject > *", 0, 0, (void*)0, 0};
@@ -4150,6 +4250,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_IAL__Ball,
   &_swigt__p_IAL__WorldObject,
   &_swigt__p_IAL__WorldObjectManager,
+  &_swigt__p_Vector2D,
   &_swigt__p_WorldObjectType,
   &_swigt__p_boost__shared_ptrT_IAL__Ball_t,
   &_swigt__p_boost__shared_ptrT_IAL__WorldObject_t,
@@ -4161,6 +4262,7 @@ static swig_cast_info _swigc__p_CameraId[] = {  {&_swigt__p_CameraId, 0, 0, 0},{
 static swig_cast_info _swigc__p_IAL__Ball[] = {  {&_swigt__p_IAL__Ball, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_IAL__WorldObject[] = {  {&_swigt__p_IAL__WorldObject, 0, 0, 0},  {&_swigt__p_IAL__Ball, _p_IAL__BallTo_p_IAL__WorldObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_IAL__WorldObjectManager[] = {  {&_swigt__p_IAL__WorldObjectManager, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Vector2D[] = {  {&_swigt__p_Vector2D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_WorldObjectType[] = {  {&_swigt__p_WorldObjectType, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_IAL__Ball_t[] = {  {&_swigt__p_boost__shared_ptrT_IAL__Ball_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_IAL__WorldObject_t[] = {  {&_swigt__p_boost__shared_ptrT_IAL__Ball_t, _p_boost__shared_ptrT_IAL__Ball_tTo_p_boost__shared_ptrT_IAL__WorldObject_t, 0, 0},  {&_swigt__p_boost__shared_ptrT_IAL__WorldObject_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -4172,6 +4274,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_IAL__Ball,
   _swigc__p_IAL__WorldObject,
   _swigc__p_IAL__WorldObjectManager,
+  _swigc__p_Vector2D,
   _swigc__p_WorldObjectType,
   _swigc__p_boost__shared_ptrT_IAL__Ball_t,
   _swigc__p_boost__shared_ptrT_IAL__WorldObject_t,

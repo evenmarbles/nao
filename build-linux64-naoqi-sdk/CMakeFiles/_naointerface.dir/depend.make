@@ -235,9 +235,12 @@ CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/../math/mathdefs.h
+CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/ball.cpp
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/ball.h
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/enums.h
+CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/imageconstants.h
 CMakeFiles/_naointerface.dir/core/common/ball.cpp.o: ../core/common/worldobject.h
 
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/boost/assert.hpp
@@ -474,6 +477,7 @@ CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: /home/astrid/nao/nao
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: ../core/common/enums.h
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: ../core/common/worldobject.cpp
 CMakeFiles/_naointerface.dir/core/common/worldobject.cpp.o: ../core/common/worldobject.h
@@ -712,12 +716,14 @@ CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/config.hpp
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/macro.hpp
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: /home/astrid/nao/naoqi-sdk-1.14.5-linux64/include/qi/os.hpp
+CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/../math/vector2d.h
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/ball.h
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/enums.h
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobject.h
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobjectmanager.cpp
 CMakeFiles/_naointerface.dir/core/common/worldobjectmanager.cpp.o: ../core/common/worldobjectmanager.h
 
+CMakeFiles/_naointerface.dir/naointerfacePYTHON_wrap.cxx.o: ../core/common/../math/vector2d.h
 CMakeFiles/_naointerface.dir/naointerfacePYTHON_wrap.cxx.o: ../core/common/ball.h
 CMakeFiles/_naointerface.dir/naointerfacePYTHON_wrap.cxx.o: ../core/common/enums.h
 CMakeFiles/_naointerface.dir/naointerfacePYTHON_wrap.cxx.o: ../core/common/worldobject.h
